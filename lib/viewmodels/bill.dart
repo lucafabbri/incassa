@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 
 import '../models/Item.dart';
 
+import 'package:RCHGatewayClient/api.dart';
+
 class BillViewModel with ChangeNotifier {
   final List<Item> _items = [];
   UnmodifiableListView<Item> get items => UnmodifiableListView(_items);
@@ -51,5 +53,12 @@ class BillViewModel with ChangeNotifier {
   void removeAll() {
     _items.clear();
     notifyListeners();
+  }
+
+  void print(){
+    if(defaultApiClient.authentication == null){
+      final api_instance = AuthApi();
+      api_instance.authTokenPost()
+    }
   }
 }

@@ -36,6 +36,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   intl: ^0.17.0
   uuid: ^3.0.6
+  RCHGatewayClient:
+    path: ../rch-gateway-client-dart
 
 dev_dependencies:
   flutter_test:
