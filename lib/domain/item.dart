@@ -1,5 +1,8 @@
 import 'package:uuid/uuid.dart';
 
+import 'discount.dart';
+import 'sell_type.dart';
+
 class Item {
   String id = const Uuid().v4();
   double quantity;
@@ -7,7 +10,7 @@ class Item {
   String description;
   int departmentId;
   int? vat;
-  DiscountItem? discount;
+  Discount? discount;
   SellType selltype;
   int get subtotal => (price * quantity).round();
   int get total => subtotal - discounttotal;
@@ -37,11 +40,6 @@ class Item {
       this.selltype = SellType.normal});
 }
 
-class DiscountItem {
-  String description;
-  int? percent;
-  int? value;
-  DiscountItem(this.description, {this.percent, this.value});
-}
 
-enum SellType { normal, free, advance_payment, coupon_single_use }
+
+

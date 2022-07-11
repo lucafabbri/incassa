@@ -1,0 +1,1 @@
+enum SellType { normal, free, advance_payment, coupon_single_use }

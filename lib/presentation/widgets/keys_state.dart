@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../theme/theme.dart';
+import '../theme.dart';
 
 class KeysState {
   KeyStateEnum plu = KeyStateEnum.inactive;

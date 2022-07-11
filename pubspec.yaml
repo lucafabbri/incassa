@@ -38,6 +38,9 @@ dependencies:
   uuid: ^3.0.6
   RCHGatewayClient:
     path: ../rch-gateway-client-dart
+  openid_client: ^0.4.6
+  shared_preferences: ^2.0.15
+  oauth2: ^2.0.0
 
 dev_dependencies:
   flutter_test:

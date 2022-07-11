@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-
-import '../theme/theme.dart';
-import 'key.dart';
-import 'keysState.dart';
+import '../theme.dart';
+import 'keybutton_widget.dart';
+import 'keys_state.dart';
 
 class KeyPadWidget extends StatelessWidget {
   Function onSubPressed;

@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:incassa/theme/theme.dart';
-import 'package:incassa/viewmodels/bill.dart';
-import 'package:incassa/widgets/key.dart';
-import 'package:incassa/widgets/keypad.dart';
 import 'package:provider/provider.dart';
-
-import '../models/Item.dart';
-import '../models/department.dart';
-import 'keysState.dart';
+import '../../domain/item.dart';
+import '../../domain/department.dart';
+import '../viewmodels/bill_viewmodel.dart';
+import 'keybutton_widget.dart';
+import 'keypad_widget.dart';
+import 'keys_state.dart';
 
 class KeyboardWidget extends StatefulWidget {
   const KeyboardWidget(Key? key) : super(key: key);
@@ -192,7 +190,7 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
   void onPlusValuePressed() {
     if (bill.items.length > 0) {
       setState(() {
-        bill.addSconto(DiscountItem("maggiorazione", value: -price));
+        bill.addValueIncrease(price);
         reset();
       });
     }
@@ -201,7 +199,7 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
   void onMinusValuePressed() {
     if (bill.items.length > 0) {
       setState(() {
-        bill.addSconto(DiscountItem("sconto", value: price));
+        bill.addValueDiscount(price);
         reset();
       });
     }
@@ -210,7 +208,7 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
   void onPlusPercPressed() {
     if (bill.items.length > 0) {
       setState(() {
-        bill.addSconto(DiscountItem("maggiorazione", percent: -price));
+        bill.addPercIncrease(price);
         reset();
       });
     }
@@ -219,7 +217,7 @@ class _KeyboardWidgetState extends State<KeyboardWidget> {
   void onMinusPercPressed() {
     if (bill.items.length > 0) {
       setState(() {
-        bill.addSconto(DiscountItem("sconto", percent: price));
+        bill.addPercDiscount(price);
         reset();
       });
     }

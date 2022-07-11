@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
-
-import '../models/Item.dart';
-import '../viewmodels/bill.dart';
+import '../../domain/item.dart';
+import '../../domain/discount.dart';
+import '../viewmodels/bill_viewmodel.dart';
 
 class BillItemWidget extends StatelessWidget {
   Item item;
@@ -88,7 +88,7 @@ class BillItemWidget extends StatelessWidget {
     );
   }
 
-  String formatDiscount(DiscountItem? discount) {
+  String formatDiscount(Discount? discount) {
     if (discount?.percent != null) {
       return "${-((discount?.percent ?? 0) / 100).round()}%";
     } else {
