@@ -79,9 +79,7 @@ class _HomePageState extends State<HomePage> {
                                 KeyButtonWidget(
                                   "TOTALE",
                                   onPressed: () async =>
-                                      {
-                                        await printReceipt(value)
-                                      },
+                                      {await printReceipt(value)},
                                   buttonStyle: totalButtonStyle(value),
                                 )
                               ]))
@@ -93,14 +91,15 @@ class _HomePageState extends State<HomePage> {
   }
 
   ButtonStyle totalButtonStyle(BillViewModel viewModel) {
-    return viewModel.canPrint
-        ? IncassaTheme.lightTextButtonStyle
-        : IncassaTheme.inactiveTextButtonStyle;
+    // return viewModel.canPrint
+    //     ? IncassaTheme.lightTextButtonStyle
+    //     : IncassaTheme.inactiveTextButtonStyle;
+    return IncassaTheme.lightTextButtonStyle;
   }
-  
+
   printReceipt(BillViewModel viewModel) async {
-    if(viewModel.canPrint){
+    // if (viewModel.canPrint) {
       await viewModel.printReceipt();
-    }
+    // }
   }
 }

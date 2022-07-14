@@ -4,7 +4,7 @@ import 'package:oauth2/oauth2.dart' as oauth2;
 import '../common/errors/advanced_error.dart';
 
 class BaseService {
-  final tokenEndpoint = Uri.parse('http://localhost:5080/auth/token');
+  final tokenEndpoint = Uri.parse('http://192.168.1.4:5080/auth/token');
   final clientId = "postman";
   final clientSecret = "postman-secret";
 
